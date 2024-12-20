@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Elements and Form Validation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Interactive Elements and Form Validation</h1>
+
+  <!-- Toggle Background Color Button -->
+  <button onclick="toggleBackgroundColor()">Toggle Background Color</button>
+
+  <!-- Slider with Real-Time Feedback -->
+  <div>
+    <label for="font-size-slider">Adjust Text Size: </label>
+    <input type="range" id="font-size-slider" min="10" max="50" value="16" oninput="updateTextSize()">
+    <span id="font-size-value">16px</span>
+  </div>
+
+  <!-- Modal with Event Listeners -->
+  <button onclick="showModal()">Show Modal</button>
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <p>This is a modal!</p>
+      <button onclick="hideModal()">Close</button>
+    </div>
+  </div>
+
+  <!-- Form with Validation -->
+  <form id="myForm">
+    <label for="name">Name (required, min 3 characters):</label>
+    <input type="text" id="name" name="name" required>
+    <div id="nameError" class="error"></div>
+
+    <label for="email">Email (valid format):</label>
+    <input type="email" id="email" name="email" required>
+    <div id="emailError" class="error"></div>
+
+    <label for="password">Password (min 8 characters, 1 uppercase, 1 number):</label>
+    <input type="password" id="password" name="password" required>
+    <div id="passwordError" class="error"></div>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <!-- Bonus: Dropdown with Custom Message -->
+  <div>
+    <label for="dropdown">Choose an option:</label>
+    <select id="dropdown" onchange="showCustomMessage()">
+      <option value="">Select...</option>
+      <option value="option1">Option 1</option>
+      <option value="option2">Option 2</option>
+      <option value="option3">Option 3</option>
+    </select>
+    <p id="customMessage"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
